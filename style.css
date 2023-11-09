@@ -562,9 +562,96 @@ footer .copyright {
     color: #f6dbf6;
 }
 
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-bar input {
+    width: 70%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 40px;
+    padding: 0 1.25rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #818ea0;
+}
+
+.search-bar .search-bar-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 5%;
+    justify-content: center;
+    background-color: #099178;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 40px;
+}
+
+
+.product-item-sale-info {
+    display: none;
+    position: absolute;
+    background-color: rgb(167, 22, 22);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    opacity: 0.85;
+
+}
+.on-sale .product-item-sale-info {
+    display: block;
+}
+
+.price-sale {
+    display: none;
+}
+
+.on-sale .price-sale {
+    display: block;
+}
+
+.empty-state {
+    display: none;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.empty-state.active {
+    display: block;
+}
+
+#product1 .product .description .prices-box{
+    display: flex;
+}
+
+#product1 .product .description h4.normal-price{
+    color: #000;
+    margin-right: 15px;
+    position: relative;
+}
+
+#product1 .product.on-sale .normal-price::before{
+    content: '';
+    position: absolute;
+    background: #000;
+    width: 120%;
+    height: 1.5px;
+    top: 50%;
+    left: -10%;
+    rotate: -10deg; 
+
+}
+
 #pagination {
     text-align: center;
-
 }
 
 #pagination a{
