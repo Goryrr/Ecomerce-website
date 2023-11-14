@@ -18,9 +18,12 @@ if (close) {
 // renderowanie produktów
 
 let Products = products;
+let categories = new Set();
 const productsSection = document.querySelector("#product-container");
 
 const renderProducts = (items) => {
+    productsSection.innerHTML = '';
+
     for(let i = 0; i < items.length; i++) {
         const newProduct = document.createElement('div');
         newProduct.className = `product ${items[i].sale ? "on-sale" : ""}`;
@@ -61,6 +64,8 @@ document.onload = renderProducts(Products);
 // });
 
 
+
+
 const searchBarInput = document.querySelector('.search-bar-input');
 
 searchBarInput.addEventListener('input', (e) => {
@@ -83,3 +88,78 @@ searchBarInput.addEventListener('input', (e) => {
 
     renderProducts(foundProducts);
 });
+
+
+const renderBrandsCategories = (items) => {
+    for (let i=0; i<items.length; i++){
+        categories.add(items[i].brand);
+    }
+
+    const categoriesItems = document.querySelector('.categories-items');
+
+    categories = ['All brands',...categories];
+
+    categories.forEach((brand, index) => {
+        const newBrandCategory = document.createElement('button');
+        newBrandCategory.innerHTML = brand;
+        newBrandCategory.dataset.brand = brand;
+
+        index === 0 ? newBrandCategory.classList.add('active') : '';
+        
+        categoriesItems.appendChild(newBrandCategory);
+    })
+
+}
+
+document.onload = renderBrandsCategories(Products);
+
+const categoriesButtons = document.querySelectorAll('.categories-items button');
+
+categoriesButtons.forEach(btn => btn.addEventListener('click', (e) => {
+   const brand = e.target.dataset.brand;
+   Products = products;
+    if (brand === 'All brands') {
+        Products = products;
+    } else {
+        Products = Products.filter((item) => item.brand === brand);
+    }
+   
+   renderProducts(Products);
+})
+);
+
+
+
+
+const renderTypeCategories = (items) => {
+    const TypeCategoriesSet = new Set();
+
+    for (let i=0; i<items.length; i++){
+        TypeCategoriesSet.add(items[i].category);
+    }
+
+    const TypeCategories = document.querySelector('.type-items');
+
+    TypeCategoriesSet.forEach((category, index) => {
+        const newTypeCategory = document.createElement('button');
+        newTypeCategory.innerHTML = category;
+
+        newTypeCategory.dataset.category = category;
+
+        TypeCategories.appendChild(newTypeCategory);
+    })
+}
+
+document.onload = renderTypeCategories(Products);
+
+const brandsButtons = document.querySelectorAll('.type-items button');
+
+brandsButtons.forEach(btn => btn.addEventListener('click', (e) => {
+    const category = e.target.dataset.category;
+
+    Products = products;
+    
+    Products = Products.filter((item) => item.category === category);
+    renderProducts(Products);
+}));
+

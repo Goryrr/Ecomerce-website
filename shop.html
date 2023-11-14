@@ -328,13 +328,25 @@
     </section> -->
 
     <div class="search-bar">
+        <div class="filters">
+            <span>Filters</span>
+        </div>
         <input type="text" class="search-bar-input" placeholder="Search item by name..." autocomplete="off">
         <div class="search-bar-icon"><img src="img/search.svg" alt="search"></div>
     </div>
 
     <p class="empty-state">Product not found</p>
 
-    <section id="product1" class="section-p1">
+    <section id="product1" class="section-p2">
+        <aside class="filter-container">
+            <div class="filter-list">
+                <h1 class="categories-title">Filters</h1>
+                <h1 class="categories-subtitle">Brands</h1>
+                <section class="categories-items"></section>
+                <h1 class="categories-subtitle">Categories</h1>
+                <section class="type-items"></section>
+            </div>
+        </aside>
         <div id="product-container"></div>
     </section>
 
