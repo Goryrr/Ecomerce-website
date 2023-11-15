@@ -652,14 +652,38 @@ footer .copyright {
 
 .filter-list {
     height: 100%;
-    /* width: 100%; */
-    padding: 20px 40px;
+    width: 40vh;
+    padding: 20px 20px;
     /* background-color: rgba(69, 212, 93, 0.05); */
     outline: 1px solid #c9cbce;
 }
 
 .categories-title {
-    font-size: 20px;
+    font-size: 28px;
+}
+
+.categories-subtitle {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    height: 40px;
+}
+
+.categories-items, .type-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.categories-items button,
+.type-items button {
+    margin: 5px;
+    background-color: transparent;
+    border: 1px solid #c9cbce;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
 }
 
 #product1 .product .description .prices-box{
