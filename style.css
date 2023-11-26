@@ -117,6 +117,40 @@ header {
 
 }
 
+#navbar .iconCart {
+    position: relative;
+}
+
+#navbar .totalQuantity {
+    position: absolute;
+    top: -15px;
+    right: 5px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    /* font-size: ; */
+    background-color: rgb(124, 47, 47);
+    color: white;
+    font-size: 12px;
+    /* display: none; */
+}
+
+#mobile .iconCart {
+    position: relative;
+}
+
+#mobile .totalQuantity {
+    position: absolute;
+    top: -15px;
+    right: 5px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    /* font-size: ; */
+    background-color: rgb(124, 47, 47);
+    color: white;
+    font-size: 12px;
+    /* display: none; */
+}
+
 #mobile {
     display: none;
     align-items: center;
@@ -125,6 +159,98 @@ header {
 #close {
     display: none;
 }
+
+
+/* Toggle Cart Bar  */
+
+.cartBar {
+    color: #fff;
+    position: fixed;
+    /* top: 0px; */
+    right: -100%;
+    width: 400px;
+    height: 100vh;
+    background-color: #222235;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    gap: 20px;
+    transition: right 1s;
+    z-index: 1000;
+    /* display: none; */
+}
+
+.cartBar h2 {
+    color: #099178;
+    padding: 20px;
+    margin: 0;
+}
+
+.cartBar .listCart {
+    padding: 20px;
+    overflow: auto;
+}
+
+.cartBar .listCart .item {
+    display: grid;
+    grid-template-columns: 50px 1fr 70px;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.cartBar .listCart img{
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cartBar .listCart .item .itemName {
+    font-weight: bold;
+}
+
+.cartBar .listCart .item .quantity {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.cartBar .listCart .item span {
+    display: block;
+    width: 50px;
+    text-align: center;
+
+}
+
+
+.cartBar .buttons {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    height: 50px;
+
+}
+
+.cartBar .buttons div {
+    background-color: #c9c1c1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cartBar .buttons a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cartBar .buttons .checkout {
+    background-color: #099178;
+}
+
 
 /* Home page */
 
@@ -639,10 +765,6 @@ footer .copyright {
     padding: 15px;
     margin-right: 20px;
     width: 10%;
-}
-
-.filters span {
-
 }
 
 .filter-container {

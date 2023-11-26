@@ -19,15 +19,53 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <div class="iconCart">
+                        <li id="lg-bag"><ab href="cart.html"><i class="fa-solid fa-cart-shopping isconCart"></i></a></li>
+                        <div class="totalQuantity">0</div>
+                    </div>
                 <a href="#" id="close"><i class="far fa-times"></i></a>
             </ul>
         </div>
+        
         <div id="mobile">
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="iconCart">
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="totalQuantity">0</div>
+            </div>
             <i id="bar" class="fas fa-outdent"></i>
         </div>
     </header>
+
+    <div class="cartBar">
+        <h2>Your cart!</h2>
+        <div class="listCart">
+            <!-- <div class="item">
+                <img src="img/products/f1.jpg" alt="">
+                <div class="itemContent">
+                    <div class="itemName">
+                        Product name
+                    </div>
+                    <div class="itemBrand">
+                        Item Brand
+                    </div>
+                    <div class="itemPrice">
+                        $450
+                    </div>
+                </div>
+                <div class="quantity">
+                    <button>-</button>
+                    <span class="value">0</span>
+                    <button>+</button>
+                </div>
+            </div> -->
+        </div>
+        <div class="buttons">
+            <!-- czemu div a nie button?? -->
+            <div class="closeCartBar">CLOSE</div>
+            <div class="checkout"><a href="cart.html">CHECKOUT</a></div>
+        </div>
+    </div>
+
 
     <!-- <div id="header">
         <a href="#"><img src="img/logo.png" alt="logo image"></a>
